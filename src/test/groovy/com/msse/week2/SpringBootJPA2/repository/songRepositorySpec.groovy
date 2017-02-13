@@ -25,7 +25,7 @@ class songRepositorySpec extends Specification {
     @Autowired
     ReleaseRepository releaseRepository
 
-    //to be used in parameters
+    //to be used in parameters.
     @Shared Release myRelease
     @Shared Artist myArtist
 
