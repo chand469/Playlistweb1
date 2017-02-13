@@ -57,7 +57,7 @@ class Account {
 
     @PostPersist
     void setPassword() {
-        password=null
+        password=null //set the password to null post persist
     }
 }
 
