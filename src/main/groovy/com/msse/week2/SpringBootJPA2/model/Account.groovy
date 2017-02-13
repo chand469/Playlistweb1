@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.persistence.OneToMany
 import javax.persistence.PrePersist
+import javax.persistence.PostPersist
 import javax.persistence.Transient
 import javax.validation.constraints.NotNull
 import org.hibernate.validator.constraints.Email
@@ -54,6 +55,10 @@ class Account {
         }
     }
 
+    @PostPersist
+    void setPassword() {
+        password=null
+    }
 }
 
 

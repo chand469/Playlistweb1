@@ -104,7 +104,7 @@ class accountRepositorySpec extends Specification {
         then:
             accountRepository.count() == recCount + 1
             accountRepository.findOne(account.id).passwordHash == account.passwordHash
-            println("username: $account.username, passwordHash: $account.passwordHash, email: $account.email")
+            println("username: $account.username,password: $account.password, passwordHash: $account.passwordHash, email: $account.email")
     }
 
 

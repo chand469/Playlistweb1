@@ -11,7 +11,6 @@ import spock.lang.Shared
 import spock.lang.Specification
 import javax.transaction.Transactional
 import javax.validation.ConstraintViolationException
-import org.springframework.dao.InvalidDataAccessApiUsageException
 
 @SpringBootTest
 @Transactional
