@@ -1,16 +1,14 @@
 package com.msse.week2.SpringBootJPA2.model
 
-import org.hibernate.validator.constraints.NotBlank
 import org.hibernate.validator.constraints.NotEmpty
-
-import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
-import javax.persistence.FetchType
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
-import javax.persistence.OneToMany
+import javax.persistence.JoinColumn
+import javax.persistence.ManyToMany
+import javax.persistence.ManyToOne
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
@@ -21,10 +19,18 @@ class Playlist {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id
 
-    @Column @NotBlank @NotNull @NotEmpty @Size(min = 5)
+    @ManyToOne
+    @JoinColumn
+    @NotNull
+    Account account
+
+    @Column
+    @NotEmpty
+    @NotNull
+    @Size(min = 5)
     String playlistname
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany
     List<Song> songs
 
 }

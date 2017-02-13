@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface SongRepository extends JpaRepository<Song,Long> {
 
+    List<Song> findBySongNameContainingIgnoreCase (String songName)
+
 }
