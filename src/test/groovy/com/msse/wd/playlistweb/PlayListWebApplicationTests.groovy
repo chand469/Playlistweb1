@@ -1,4 +1,4 @@
-package com.msse.week2.SpringBootJPA2
+package com.msse.wd.playlistweb
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner)
 @SpringBootTest
-class SpringBootJpa2ApplicationTests {
+class PlayListWebApplicationTests {
 
 	@Test
 	void contextLoads() {

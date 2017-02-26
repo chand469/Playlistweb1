@@ -1,8 +1,8 @@
-package com.msse.week2.SpringBootJPA2.repository
+package com.msse.wd.playlistweb.repository
 
-import com.msse.week2.SpringBootJPA2.model.Artist
-import com.msse.week2.SpringBootJPA2.model.Release
-import com.msse.week2.SpringBootJPA2.model.Song
+import com.msse.wd.playlistweb.model.Artist
+import com.msse.wd.playlistweb.model.Release
+import com.msse.wd.playlistweb.model.Song
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import spock.lang.Shared

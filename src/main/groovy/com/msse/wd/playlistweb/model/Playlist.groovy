@@ -1,4 +1,4 @@
-package com.msse.week2.SpringBootJPA2.model
+package com.msse.wd.playlistweb.model
 
 import org.hibernate.validator.constraints.NotEmpty
 import javax.persistence.Column

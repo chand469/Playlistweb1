@@ -1,12 +1,12 @@
-package com.msse.week2.SpringBootJPA2
+package com.msse.wd.playlistweb
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class SpringBootJpa2Application {
+class PlaylistWebApplication {
 
 	static void main(String[] args) {
-		SpringApplication.run SpringBootJpa2Application, args
+		SpringApplication.run PlaylistWebApplication, args
 	}
 }

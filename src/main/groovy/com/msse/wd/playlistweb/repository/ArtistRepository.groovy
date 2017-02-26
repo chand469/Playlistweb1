@@ -1,6 +1,6 @@
-package com.msse.week2.SpringBootJPA2.repository
+package com.msse.wd.playlistweb.repository
 
-import com.msse.week2.SpringBootJPA2.model.Artist
+import com.msse.wd.playlistweb.model.Artist
 import org.springframework.data.jpa.repository.JpaRepository
 
 

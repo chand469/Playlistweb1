@@ -1,10 +1,10 @@
-package com.msse.week2.SpringBootJPA2.repository
+package com.msse.wd.playlistweb.repository
 
-import com.msse.week2.SpringBootJPA2.model.Account
-import com.msse.week2.SpringBootJPA2.model.Artist
-import com.msse.week2.SpringBootJPA2.model.Playlist
-import com.msse.week2.SpringBootJPA2.model.Release
-import com.msse.week2.SpringBootJPA2.model.Song
+import com.msse.wd.playlistweb.model.Account
+import com.msse.wd.playlistweb.model.Artist
+import com.msse.wd.playlistweb.model.Playlist
+import com.msse.wd.playlistweb.model.Release
+import com.msse.wd.playlistweb.model.Song
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import spock.lang.Shared
@@ -72,7 +72,7 @@ class playlistRepositorySpec extends Specification {
             /* adding the songs 1 and 2 to the playlist 1 for the account 'MSSE' */
 
         when:
-            playlistRepository.save(playlist1)   /* saving the Playlist 1  */
+            playlistRepository.save(playlist1)   /* saving the playlistweb 1  */
 
         then:
             playlistRepository.count() == recCount + 1
