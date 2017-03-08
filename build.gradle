@@ -30,9 +30,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-groovy-templates')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile('org.codehaus.groovy:groovy')
 	runtime('com.h2database:h2')
-
+	testCompile 'cglib:cglib-nodep:3.2.2' // for stubbing of classes
 	compile('org.springframework.boot:spring-boot-starter-security')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
