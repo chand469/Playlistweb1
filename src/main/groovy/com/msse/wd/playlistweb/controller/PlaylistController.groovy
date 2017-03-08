@@ -1,4 +1,4 @@
-package com.msse.wd.playlistweb.controller.rest
+package com.msse.wd.playlistweb.controller
 
 import com.msse.wd.playlistweb.model.Playlist
 import com.msse.wd.playlistweb.service.PlaylistService

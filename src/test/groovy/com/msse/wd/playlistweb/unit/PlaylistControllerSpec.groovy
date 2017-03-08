@@ -1,15 +1,11 @@
 package com.msse.wd.playlistweb.unit
 
-import com.msse.wd.playlistweb.controller.rest.PlaylistController
+import com.msse.wd.playlistweb.controller.PlaylistController
 import com.msse.wd.playlistweb.model.Playlist
 import com.msse.wd.playlistweb.service.PlaylistService
 import spock.lang.Specification
-import spock.lang.Unroll
 
-import javax.servlet.http.HttpServletResponse
-
-
-    class PlaylistControllerSpec extends Specification {
+class PlaylistControllerSpec extends Specification {
 
 
 
