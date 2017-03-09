@@ -3,6 +3,7 @@ buildscript {
 		springBootVersion = '1.5.1.RELEASE'
 	}
 	repositories {
+
 		mavenCentral()
 	}
 	dependencies {
@@ -25,24 +26,28 @@ repositories {
 	mavenCentral()
 }
 
-dependencies {
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-groovy-templates')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-	compile('org.codehaus.groovy:groovy')
-	runtime('com.h2database:h2')
-	testCompile 'cglib:cglib-nodep:3.2.2' // for stubbing of classes
-	compile('org.springframework.boot:spring-boot-starter-security')
+	dependencies {
+		compile('org.springframework.boot:spring-boot-starter-data-jpa')
+		compile('org.springframework.boot:spring-boot-starter-groovy-templates')
+		compile('org.springframework.boot:spring-boot-starter-web')
+		compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+		compile('org.codehaus.groovy:groovy')
+		runtime('com.h2database:h2')
 
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile("org.spockframework:spock-core:1.1-groovy-2.4-rc-1") {
-		exclude module: 'groovy-all'
+		compile('org.springframework.boot:spring-boot-starter-security')
+
+		testCompile('org.springframework.boot:spring-boot-starter-test')
+		testCompile("org.spockframework:spock-core:1.1-groovy-2.4-rc-1") {
+			exclude module: 'groovy-all'
+		}
+		testCompile("org.spockframework:spock-spring:1.1-groovy-2.4-rc-1") {
+			exclude module: 'groovy-all'
+		}
+
+		//https://mvnrepository.com/artifact/cglib/cglib-nodep
+		compile group: 'cglib', name: 'cglib-nodep', version: '3.2.5'
+
+
 	}
-	testCompile("org.spockframework:spock-spring:1.1-groovy-2.4-rc-1") {
-		exclude module: 'groovy-all'
-	}
 
-
-}
 

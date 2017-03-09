@@ -37,9 +37,9 @@ class playlistRepositorySpec extends Specification {
     def 'P1. A valid playlist requires a name and related account'() {
         given:
             def account = new Account(username: 'MSSE', password: 'pass1.ms#.coM', email: 'msse@umn.edu') /* creating an account */
-            accountRepository.save(account) /* saving the account */
+        accountRepository.save(account) /* saving the account */
 
-            def recCount = playlistRepository.count()
+        def recCount = playlistRepository.count()
             def playlist1 = new Playlist(playlistname: 'Playlist1',account: account) /* creating Playlist1 for account 'MSSE') */
 
         when:
@@ -53,16 +53,16 @@ class playlistRepositorySpec extends Specification {
 
         given:
             def account = new Account(username: 'MSSE', password: 'pass1.ms#.coM', email: 'msse@umn.edu') /* creating an account */
-            accountRepository.save(account)  /* saving the account */
+        accountRepository.save(account)  /* saving the account */
 
-            def newArtist = new Artist(artistname:'TheSinger')
-            artistRepository.save(newArtist)
+        def newArtist = new Artist(artistname:'TheSinger')
+        artistRepository.save(newArtist)
 
-            def newRelease = new Release(releaseName:'TopHits',artist: newArtist, releaseType:'single')
-            releaseRepository.save(newRelease)
+        def newRelease = new Release(releaseName:'TopHits',artist: newArtist, releaseType:'single')
+        releaseRepository.save(newRelease)
 
-            def song1 = new Song(songName: 'song1', release: newRelease)
-            songRepository.save(song1) /* saving the first song */
+        def song1 = new Song(songName: 'song1', release: newRelease)
+        songRepository.save(song1) /* saving the first song */
 
             def song2 = new Song(songName: 'song2', release: newRelease)
             songRepository.save(song2) /* saving the second song */
