@@ -3,41 +3,52 @@ package com.msse.wd.playlistweb.controller.rest
 import com.msse.wd.playlistweb.model.Playlist
 import com.msse.wd.playlistweb.service.PlaylistService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.domain.Page
-import org.springframework.data.domain.PageRequest
-import org.springframework.data.domain.Pageable
-import org.springframework.data.domain.Sort
-import org.springframework.stereotype.Controller
-import org.springframework.ui.Model
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.ResponseBody
+import org.springframework.web.bind.annotation.RestController
 
-@Controller
+import javax.servlet.http.HttpServletResponse
+
+@RestController
+@RequestMapping('/playlists')
 class PlaylistController {
-
     @Autowired
     PlaylistService playlistService
 
-   @RequestMapping("/playlistView")
-    String playlistView(Model model, Pageable request) {
-        Page page = playlistService.listPlaylists(new PageRequest(request.pageNumber, request.pageSize, new Sort(Sort.Direction.DESC, "createdDate")))
-        model.addAttribute("page", page)
-        return "playlistView"
-    }
-
-    @GetMapping("/playlistView1")
-    @ResponseBody
-    Map nonMappedView(Model model, Pageable request) {
-        return [data: [d1: 1, d2: 2]]
-    }
-
     @PostMapping
     Playlist addPlaylist(@RequestBody Playlist playlist) {
-       return playlistService.addPlaylist(playlist)
+        return playlistService.addPlaylist(playlist)
     }
 
+    @GetMapping('/{playlistId}')
+    Playlist getPlaylist(@PathVariable Long playlistId, HttpServletResponse response) {
+        Playlist playlist = playlistService.getPlaylist(playlistId)
+        if (!playlist) {
+            response.setStatus(404)
+        }
+        return playlist
+    }
 
+    @PutMapping('/{playlistId}')
+    Playlist updatePlaylist(@PathVariable Long playlistId, @RequestBody Playlist playlist, HttpServletResponse response) {
+        Playlist playlistdb = playlistService.getPlaylist(playlistId)
+        if (!playlistdb) {
+            response.setStatus(404)
+        }
+        return playlistService.updatePlaylist(playlist)
+    }
+
+    @DeleteMapping('/{playlistId}')
+    boolean deletePlaylist(@PathVariable Long playlistId, HttpServletResponse response) {
+        Playlist playlist = playlistService.getPlaylist(playlistId)
+        if (!playlist) {
+            response.setStatus(404)
+        }
+        return playlistService.deletePlaylist(playlistId)
+    }
 }

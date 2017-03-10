@@ -31,7 +31,7 @@ class PlaylistControllerSpec extends Specification {
   //  }
 
 
-        def "add a Playlist to an account"(){
+        def "Creat a Playlist for an account"(){
 
             setup:
 
